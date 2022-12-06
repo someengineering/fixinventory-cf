@@ -122,8 +122,9 @@ Resources:
               - Effect: "Allow"
                 Resource: "*"
                 Action:
-                  - organizations:Describe*
-                  - organizations:List*
+                  - organizations:ListAccounts
+                  - ec2:DescribeRegions
+                  - iam:ListAccountAliases
         - PolicyName: "ResotoCollect"
           PolicyDocument:
             Version: "2012-10-17"
