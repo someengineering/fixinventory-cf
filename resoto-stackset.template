@@ -8,7 +8,7 @@ Parameters:
   DeploymentTargetOrganizationalUnitIds:
     Type: String
     Default: ""
-    Description: "List of OUs where the Resoto Access Role gets deployed."
+    Description: "List of OUs where the Resoto Access Role gets deployed (space delimited)."
   StackSetPermissionModel:
     Type: String
     Default: SERVICE_MANAGED

@@ -114,6 +114,12 @@ Resources:
             Action:
               - 'sts:AssumeRole'
               - 'sts:TagSession'
+          - Effect: Allow
+            Principal:
+              AWS: !Join ['', ['arn:aws:iam::', !Ref ResotoAccountID, ':root']]
+            Action:
+              - 'sts:AssumeRole'
+              - 'sts:TagSession'
       Policies:
         - PolicyName: "ResotoOrgList"
           PolicyDocument:
