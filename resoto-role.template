@@ -110,12 +110,6 @@ Resources:
         Statement:
           - Effect: Allow
             Principal:
-              AWS: !Join ['', ['arn:aws:iam::', !Ref ResotoAccountID, ':role/ResotoRun']]
-            Action:
-              - 'sts:AssumeRole'
-              - 'sts:TagSession'
-          - Effect: Allow
-            Principal:
               AWS: !Join ['', ['arn:aws:iam::', !Ref ResotoAccountID, ':root']]
             Action:
               - 'sts:AssumeRole'
