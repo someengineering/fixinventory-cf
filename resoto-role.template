@@ -81,26 +81,26 @@ Resources:
       AssumeRolePolicyDocument:
         Version: 2012-10-17
         Statement:
-          - Effect: Allow
-            Principal:
-              Service:
-                - lambda.amazonaws.com
-            Action: sts:AssumeRole
+        - Effect: Allow
+          Principal:
+            Service:
+            - lambda.amazonaws.com
+          Action: sts:AssumeRole
       Path: '/'
       Policies:
-        - PolicyName: ResotoRoleExistsCheckExecutionPolicy
-          PolicyDocument:
-            Version: 2012-10-17
-            Statement:
-              - Effect: Allow
-                Action:
-                  - logs:CreateLogGroup
-                  - logs:CreateLogStream
-                  - logs:PutLogEvents
-                Resource: 'arn:aws:logs:*:*:*'
-              - Effect: Allow
-                Action: iam:GetRole
-                Resource: '*'
+      - PolicyName: ResotoRoleExistsCheckExecutionPolicy
+        PolicyDocument:
+          Version: 2012-10-17
+          Statement:
+          - Effect: Allow
+            Action:
+            - logs:CreateLogGroup
+            - logs:CreateLogStream
+            - logs:PutLogEvents
+            Resource: 'arn:aws:logs:*:*:*'
+          - Effect: Allow
+            Action: iam:GetRole
+            Resource: '*'
 
   ResotoAccessRoleNameFunction:
     Type: Custom::Function

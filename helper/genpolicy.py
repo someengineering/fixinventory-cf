@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
+import sys
 from yaml import safe_dump
 from resoto_plugin_aws.collector import called_collect_apis, called_mutator_apis
 from resoto_plugin_aws.resource.base import AwsApiSpec
 
 
 def main() -> None:
-    in_file = "resoto-role.template.in"
+    if len(sys.argv) != 2:
+        print("Usage: genpolicy.py <template_file>")
+        sys.exit(1)
+    in_file = sys.argv[1]
     indent_by = 6
 
     with open(in_file, "r") as f:
