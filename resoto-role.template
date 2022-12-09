@@ -10,6 +10,14 @@ Parameters:
     Type: String
     Default: ResotoAccess
 
+Outputs:
+  ResotoAccessRoleName:
+    Description: Name of the Resoto Access Role
+    Value: !GetAtt ResotoAccessRoleNameFunction.role_name
+  ResotoAccessRoleArn:
+    Description: ARN of the Resoto Access Role
+    Value: !GetAtt CrossAccountAccessRoleForResoto.Arn
+
 Resources:
   ResotoRoleExistsCheckFunction:
     Type: AWS::Lambda::Function
@@ -370,11 +378,3 @@ Resources:
                   - sqs:DeleteQueue
                   - sqs:TagQueue
                   - sqs:UntagQueue
-
-Outputs:
-  ResotoAccessRoleName:
-    Description: Name of the Resoto Access Role
-    Value: !GetAtt ResotoAccessRoleNameFunction.role_name
-  ResotoAccessRoleArn:
-    Description: ARN of the Resoto Access Role
-    Value: !GetAtt CrossAccountAccessRoleForResoto.Arn
