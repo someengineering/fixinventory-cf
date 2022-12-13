@@ -48,13 +48,13 @@ Resources:
               except Exception as e:
                   print("send(..) failed executing requests.put(..): " + str(e))
           def resoto_role_check(event, context):
-              response_data = {}
-              if event.get("RequestType") == "Delete":
+              role_name = event["ResourceProperties"].get("RoleName", "ResotoAccess")
+              response_data = {"role_name": role_name}
+              if event.get("RequestType") in ("Delete", "Update"):
                   send(event, context, "SUCCESS", response_data)
                   return
               try:
                   iam = boto3.client("iam")
-                  role_name = event["ResourceProperties"]["RoleName"]
                   try:
                       iam.get_role(RoleName=role_name)
                       print(f"Role {role_name} already exists - generating new role name")
