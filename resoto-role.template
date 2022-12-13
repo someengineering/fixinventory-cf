@@ -151,6 +151,7 @@ Resources:
             - cloudformation:ListStackInstances
             - cloudformation:ListStackSets
             - cloudwatch:DescribeAlarms
+            - cloudwatch:GetMetricData
             - cognito-idp:ListGroups
             - cognito-idp:ListTagsForResource
             - cognito-idp:ListUserPools
