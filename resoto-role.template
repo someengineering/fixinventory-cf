@@ -150,6 +150,16 @@ Resources:
             - cloudformation:DescribeStacks
             - cloudformation:ListStackInstances
             - cloudformation:ListStackSets
+            - cloudfront:ListCachePolicies
+            - cloudfront:ListDistributions
+            - cloudfront:ListFieldLevelEncryptionConfigs
+            - cloudfront:ListFieldLevelEncryptionProfiles
+            - cloudfront:ListFunctions
+            - cloudfront:ListOriginAccessControls
+            - cloudfront:ListPublicKeys
+            - cloudfront:ListRealtimeLogConfigs
+            - cloudfront:ListResponseHeadersPolicies
+            - cloudfront:ListStreamingDistributions
             - cloudwatch:DescribeAlarms
             - cloudwatch:GetMetricData
             - cognito-idp:ListGroups
@@ -272,6 +282,27 @@ Resources:
             - cloudformation:DeleteStackSet
             - cloudformation:UpdateStack
             - cloudformation:UpdateStackSet
+            - cloudfront:DeleteCachePolicy
+            - cloudfront:DeleteDistribution
+            - cloudfront:DeleteFieldLevelEncryptionConfig
+            - cloudfront:DeleteFieldLevelEncryptionProfile
+            - cloudfront:DeleteFunction
+            - cloudfront:DeleteOriginAccessControl
+            - cloudfront:DeletePublicKey
+            - cloudfront:DeleteRealtimeLogConfig
+            - cloudfront:DeleteResponseHeadersPolicy
+            - cloudfront:DescribeFunction
+            - cloudfront:GetCachePolicy
+            - cloudfront:GetDistribution
+            - cloudfront:GetDistributionConfig
+            - cloudfront:GetFieldLevelEncryptionConfig
+            - cloudfront:GetFieldLevelEncryptionProfile
+            - cloudfront:GetOriginAccessControl
+            - cloudfront:GetPublicKey
+            - cloudfront:GetResponseHeadersPolicy
+            - cloudfront:TagResource
+            - cloudfront:UntagResource
+            - cloudfront:UpdateDistribution
             - cloudwatch:DeleteAlarms
             - cloudwatch:TagResource
             - cloudwatch:UntagResource
