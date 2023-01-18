@@ -22,6 +22,32 @@ Parameters:
     - DELEGATED_ADMIN
     - SELF
     Description: 'What the StackSet is being called as, either DELEGATED_ADMIN (default) or SELF.'
+  StackSetDeploymentRegion:
+    Type: String
+    Default: us-east-1
+    AllowedValues:
+    - ap-northeast-1
+    - ap-northeast-2
+    - ap-northeast-3
+    - ap-south-1
+    - ap-southeast-1
+    - ap-southeast-2
+    - ca-central-1
+    - eu-central-1
+    - eu-north-1
+    - eu-west-1
+    - eu-west-2
+    - eu-west-3
+    - sa-east-1
+    - us-east-1
+    - us-east-2
+    - us-west-1
+    - us-west-2
+    - us-gov-east-1
+    - us-gov-west-1
+    - cn-north-1
+    - cn-northwest-1
+    Description: 'Region where the StackSet is being deployed in.'
 
 Conditions:
   DeploymentTargetOrganizationalUnitIdsIsEmpty: !Equals [!Ref 'DeploymentTargetOrganizationalUnitIds', '']
@@ -34,7 +60,7 @@ Resources:
       Description: Resoto Access Role StackSet
       StackInstancesGroup:
       - Regions:
-        - us-east-1
+        - !Ref StackSetDeploymentRegion
         DeploymentTargets:
           OrganizationalUnitIds: !If [DeploymentTargetOrganizationalUnitIdsIsEmpty, !Ref AWS::NoValue, !Split [' ', !Ref DeploymentTargetOrganizationalUnitIds]]
       Capabilities:
