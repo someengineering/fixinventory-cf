@@ -212,6 +212,9 @@ Resources:
             - elasticbeanstalk:DescribeEnvironmentResources
             - elasticbeanstalk:DescribeEnvironments
             - elasticbeanstalk:ListTagsForResource
+            - elasticfilesystem:DescribeAccessPoints
+            - elasticfilesystem:DescribeFileSystems
+            - elasticfilesystem:DescribeMountTargets
             - elasticloadbalancing:DescribeListeners
             - elasticloadbalancing:DescribeLoadBalancers
             - elasticloadbalancing:DescribeTags
@@ -220,15 +223,16 @@ Resources:
             - glacier:ListJobs
             - glacier:ListTagsForVault
             - glacier:ListVaults
+            - iam:GenerateCredentialReport
             - iam:GetAccessKeyLastUsed
             - iam:GetAccountAuthorizationDetails
             - iam:GetAccountPasswordPolicy
             - iam:GetAccountSummary
+            - iam:GetCredentialReport
             - iam:ListAccessKeys
             - iam:ListAccountAliases
             - iam:ListInstanceProfiles
             - iam:ListServerCertificates
-            - iam:ListUsers
             - kinesis:DescribeStream
             - kinesis:ListStreams
             - kinesis:ListTagsForStream
@@ -247,16 +251,20 @@ Resources:
             - route53:ListHostedZones
             - route53:ListResourceRecordSets
             - route53:ListTagsForResource
+            - s3:GetAccountPublicAccessBlock
+            - s3:GetBucketPolicy
             - s3:GetBucketTagging
+            - s3:GetBucketVersioning
+            - s3:GetEncryptionConfiguration
             - s3:ListAllMyBuckets
             - sagemaker:DescribeAlgorithm
             - sagemaker:DescribeApp
             - sagemaker:DescribeArtifact
+            - sagemaker:DescribeAutoMlJob
             - sagemaker:DescribeCompilationJob
-            - sagemaker:DescribeDescribeAutoMlJob
             - sagemaker:DescribeDomain
             - sagemaker:DescribeEdgePackagingJob
-            - sagemaker:DescribeEndpoints
+            - sagemaker:DescribeEndpoint
             - sagemaker:DescribeHyperParameterTuningJob
             - sagemaker:DescribeImage
             - sagemaker:DescribeInferenceRecommendationsJob
@@ -404,6 +412,8 @@ Resources:
             - elasticbeanstalk:DeleteApplication
             - elasticbeanstalk:TerminateEnvironment
             - elasticbeanstalk:UpdateTagsForResource
+            - elasticfilesystem:TagResource
+            - elasticfilesystem:UntagResource
             - elasticloadbalancing:AddTags
             - elasticloadbalancing:DeleteLoadBalancer
             - elasticloadbalancing:DeleteTargetGroup
@@ -456,7 +466,22 @@ Resources:
             - s3:DeleteObject
             - s3:PutBucketTagging
             - sagemaker:AddTags
+            - sagemaker:DeleteAlgorithm
+            - sagemaker:DeleteApp
+            - sagemaker:DeleteArtifact
+            - sagemaker:DeleteCodeRepository
+            - sagemaker:DeleteDomain
+            - sagemaker:DeleteEndpoint
+            - sagemaker:DeleteExperiment
+            - sagemaker:DeleteImage
+            - sagemaker:DeleteModel
+            - sagemaker:DeleteNotebookInstance
+            - sagemaker:DeletePipeline
+            - sagemaker:DeleteProject
             - sagemaker:DeleteTags
+            - sagemaker:DeleteTrial
+            - sagemaker:DeleteUserProfile
+            - sagemaker:DeleteWorkteam
             - servicequotas:TagResource
             - servicequotas:UntagResource
             - sns:DeleteEndpoint
