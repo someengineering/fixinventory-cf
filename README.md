@@ -1,5 +1,5 @@
 # resoto-cf
-Resoto Cloudformation Templates
+Resoto IAM Role Cloudformation Templates
 
 ## Overview
 
