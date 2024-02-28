@@ -1,13 +1,13 @@
 AWSTemplateFormatVersion: "2010-09-09"
-Description: 'Resoto Stack that creates a StackSet which deploys the ResotoAccess role to all accounts in the organization.'
+Description: 'Fix Inventory Stack that creates a StackSet which deploys the FixInventoryAccess role to all accounts in the organization.'
 Parameters:
-  ResotoAccountID:
-    Description: 'The Account ID where Resoto has been deployed.'
+FixInventoryAccountID:
+    Description: 'The Account ID where Fix Inventory has been deployed.'
     Type: Number
   DeploymentTargetOrganizationalUnitIds:
     Type: String
     Default: ''
-    Description: 'List of OUs where the Resoto Access Role gets deployed (space delimited).'
+    Description: 'List of OUs where the Fix Inventory Access Role gets deployed (space delimited).'
   StackSetPermissionModel:
     Type: String
     Default: SERVICE_MANAGED
@@ -53,11 +53,11 @@ Conditions:
   DeploymentTargetOrganizationalUnitIdsIsEmpty: !Equals [!Ref 'DeploymentTargetOrganizationalUnitIds', '']
 
 Resources:
-  ResotoStackSet:
+  FixInventoryStackSet:
     Type: AWS::CloudFormation::StackSet
     Properties:
       StackSetName: !Ref AWS::StackName
-      Description: Resoto Access Role StackSet
+      Description: Fix Inventory Access Role StackSet
       StackInstancesGroup:
       - Regions:
         - !Ref StackSetDeploymentRegion
@@ -70,7 +70,7 @@ Resources:
         RetainStacksOnAccountRemoval: false
       PermissionModel: !Ref StackSetPermissionModel
       CallAs: !Ref StackSetCallAs
-      TemplateURL: 'https://resotopublic.s3.amazonaws.com/cf/resoto-role.template'
+      TemplateURL: 'https://fixinventorypublic.s3.amazonaws.com/cf/fixinventory-role.template'
       Parameters:
-      - ParameterKey: ResotoAccountID
-        ParameterValue: !Ref ResotoAccountID
+      - ParameterKey: FixInventoryAccountID
+        ParameterValue: !Ref FixInventoryAccountID
