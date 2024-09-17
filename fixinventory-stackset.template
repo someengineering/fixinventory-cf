@@ -1,7 +1,7 @@
 AWSTemplateFormatVersion: "2010-09-09"
 Description: 'Fix Inventory Stack that creates a StackSet which deploys the FixInventoryAccess role to all accounts in the organization.'
 Parameters:
-FixInventoryAccountID:
+  FixInventoryAccountID:
     Description: 'The Account ID where Fix Inventory has been deployed.'
     Type: Number
   DeploymentTargetOrganizationalUnitIds:
