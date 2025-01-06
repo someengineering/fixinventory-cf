@@ -7,22 +7,7 @@ These templates are used to create an AWS IAM role that has the exact permission
 
 The best starting point is our [How to Roll Out Resoto AWS Permissions with CloudFormation](https://inventory.fix.security/docs/how-to-guides/configuration/roll-out-fixinventory-aws-permissions-with-cloudformation) how to guide.
 
-If you are only interested in the S3 URIs, here they are:
-[https://fixinventorypublic.s3.amazonaws.com/cf/fixinventory-role.template](https://fixinventorypublic.s3.amazonaws.com/cf/fixinventory-role.template)
-[https://fixinventorypublic.s3.amazonaws.com/cf/fixinventory-stackset.template](https://fixinventorypublic.s3.amazonaws.com/cf/fixinventory-stackset.template)
+If you are only interested in the raw template file:
+[https://cdn.some.engineering/fix/aws/latest/fixinventory-role.template](https://cdn.some.engineering/fix/aws/latest/fixinventory-role.template).
 
 The code that generates the role as well as the role template, lives in [the AWS Fix Inventory plugin project](https://github.com/someengineering/fixinventory/tree/main/plugins/aws/tools/awspolicygen).
-
-## Usage
-
-For details we recommend reading the how-to linked above, but the TL;DR is:
-
-```bash
-AWS_OU="r-7h7x"  # Replace with your OU
-FIXINVENTORY_ACCOUNT_ID="434236089377"  # Replace with your account ID Fix Inventory is running in
-aws cloudformation create-stack \
-  --region us-east-1 \
-  --stack-name FixInventoryAccess \
-  --template-url https://fixinventorypublic.s3.amazonaws.com/cf/resoto-stackset.template \
-  --parameters ParameterKey=DeploymentTargetOrganizationalUnitIds,ParameterValue="$AWS_OU" ParameterKey=FixInventoryAccountID,ParameterValue=$FIXINVENTORY_ACCOUNT_ID
-```
